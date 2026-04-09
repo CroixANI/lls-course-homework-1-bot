@@ -78,40 +78,6 @@ main
 37
 , in
 main
-     application = Application.builder().token(TELEGRAM_TOKEN).build()   File
-"/Users/anichiporovich/Documents/github/claude/llm-course/homework-1-bot/venv/lib/python3.14/site-packages/telegram/ext/_applicationbuilder.py"
-, line
-327
-, in
-build
-     ] =
-DefaultValue.get_value(  # pylint: disable=not-callable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-self._application_class
-~~~~~~~~~~~~~~~~~~~~~~~
-)
-(
-~
-^
-bot=bot,
-^^^^^^^^
-     ...<9 lines>...
-**self._application_kwargs,  # For custom Application subclasses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-)
-^
-   File
-"/Users/anichiporovich/Documents/github/claude/llm-course/homework-1-bot/venv/lib/python3.14/site-packages/telegram/ext/_application.py"
-, line
-368
-, in
-__init__
-self.__stop_running_marker
- = asyncio.Event()
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError
-:
-'Application' object has no attribute '_Application__stop_running_marker' and no __dict__ for setting new attributes
 
 изучи причину ошибки и предложи решение
 ```
@@ -123,7 +89,7 @@ AttributeError
 ```md
 Я запустил "python3 bot.py". Ошибок нет. 
 Я написал боту в Телеграме "Привет. Кто ты?" и увидел в консоле следующее
-2026-04-09 23:32:19,702 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8723198988:AAG9mKJVM73WS1uR15Mk5mTAvrOpsW3mgTU/getUpdates "HTTP/1.1 200 OK" 2026-04-09 23:32:19,705 - __main__ - INFO - Сообщение от Aleksandr Nichiporovich (id=6282581304): Привет. Кто ты? 2026-04-09 23:32:19,881 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8723198988:AAG9mKJVM73WS1uR15Mk5mTAvrOpsW3mgTU/sendChatAction "HTTP/1.1 200 OK" 2026-04-09 23:32:22,372 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK" 2026-04-09 23:32:22,438 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8723198988:AAG9mKJVM73WS1uR15Mk5mTAvrOpsW3mgTU/sendMessage "HTTP/1.1 200 OK"
+2026-04-09 23:32:19,702 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot.../getUpdates "HTTP/1.1 200 OK" 2026-04-09 23:32:19,705 - __main__ - INFO - Сообщение от Aleksandr Nichiporovich: Привет. Кто ты? 2026-04-09 23:32:19,881 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot.../sendChatAction "HTTP/1.1 200 OK" 2026-04-09 23:32:22,372 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK" 2026-04-09 23:32:22,438 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot.../sendMessage "HTTP/1.1 200 OK"
 
 Но бот мне ответил ошибкой 
 ⚠️ Не удалось получить ответ от LLM. Убедитесь, что Ollama запущена.
